@@ -1,3 +1,5 @@
-const helloWorld:string = 'helloWorld'
+import { View } from './view';
 
-console.log(helloWorld)
+(async function () {
+  const view = new View('app');
+})();

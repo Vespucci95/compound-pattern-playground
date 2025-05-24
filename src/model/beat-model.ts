@@ -20,6 +20,8 @@ interface BeatModelInterface {
   increaseBPM(): void;
 
   decreaseBPM(): void;
+  
+  isPlaying(): boolean;
 
   registerObserver(observer: BPMObserver): void;
 
@@ -80,6 +82,10 @@ class BeatModel implements BeatModelInterface {
 
   decreaseBPM() {
     this.setBPM(this.getBPM() - 1);
+  }
+
+  isPlaying(): boolean {
+    return this._intervalId !== null;
   }
 
   registerObserver(observer: BPMObserver): void {

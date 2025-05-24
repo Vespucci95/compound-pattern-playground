@@ -1,6 +1,6 @@
-import BeatModel from './beat-model';
-import BeatView from './beat-view';
-import BeatController from './beat-controller';
+import BeatModel from './model/beat-model';
+import BeatView from './view/beat-view';
+import BeatController from './controller/beat-controller';
 
 (async function () {
   const model = new BeatModel();

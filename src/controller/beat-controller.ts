@@ -1,4 +1,4 @@
-import BeatModel from './beat-model';
+import BeatModel from '../model/beat-model';
 
 class BeatController {
   private _model: BeatModel;

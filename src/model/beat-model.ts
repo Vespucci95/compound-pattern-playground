@@ -1,4 +1,4 @@
-import audioSource from 'url:./assets/clap.wav';
+import audioSource from 'url:../assets/clap.wav';
 
 export interface BPMObserver {
   updateBPM(): void;

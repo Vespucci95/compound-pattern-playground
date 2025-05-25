@@ -4,4 +4,4 @@ abstract class Component {
   abstract update(data: any): void;
 }
 
-export default Component
+export default Component;

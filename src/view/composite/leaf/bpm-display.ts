@@ -15,4 +15,4 @@ class BPMDisplay extends Component {
     }
   }
 }
-export default BPMDisplay
+export default BPMDisplay;

@@ -8,7 +8,7 @@ class Container extends Component {
   }
 
   remove(component: Component): void {
-    this.children = this.children.filter(child => child !== component)
+    this.children = this.children.filter(child => child !== component);
   }
 
   render(): string {

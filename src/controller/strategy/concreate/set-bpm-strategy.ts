@@ -12,7 +12,11 @@ class SetBpmStrategy implements EventStrategy {
   }
 
   predicate(): boolean {
-    return Number.isInteger(this.getValue()) && this.getValue() >= this.model.getBPMMin() && this.getValue() <= this.model.getBPMMax();
+    return (
+      Number.isInteger(this.getValue()) &&
+      this.getValue() >= this.model.getBPMMin() &&
+      this.getValue() <= this.model.getBPMMax()
+    );
   }
 
   errorMessage(): string {

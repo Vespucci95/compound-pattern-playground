@@ -1,6 +1,5 @@
 import BeatModel, { BPMObserver } from '../model/beat-model';
 import { insertWith } from '../utils/dom';
-import { isElement } from '../utils/core';
 import Container from './composite/composite/container';
 import BPMDisplay from './composite/leaf/bpm-display';
 import BPMInput from './composite/leaf/bpm-input';
@@ -45,7 +44,7 @@ class BeatView extends Container implements BPMObserver {
     const data = {
       bpm: this.model.getBPM(),
       min: this.model.getBPMMin(),
-      max: this.model.getBPMMax()
+      max: this.model.getBPMMax(),
     };
     this.update(data);
   }

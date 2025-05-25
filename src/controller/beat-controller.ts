@@ -16,13 +16,10 @@ class BeatController {
     this.setStrategy('start', new StartStrategy(model));
     this.setStrategy(
       'set',
-      new SetBpmStrategy(
-        model,
-        () => {
-          const input = document.getElementById('bpm-input') as HTMLInputElement;
-          return Number(input.value);
-        }
-      )
+      new SetBpmStrategy(model, () => {
+        const input = document.getElementById('bpm-input') as HTMLInputElement;
+        return Number(input.value);
+      })
     );
     this.eventListener();
   }

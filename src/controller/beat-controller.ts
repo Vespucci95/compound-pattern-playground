@@ -5,22 +5,17 @@ import DecreaseBpmStrategy from './strategy/concreate/decrease-bpm-strategy';
 import IncreaseBpmStrategy from './strategy/concreate/increase-bpm-strategy';
 import StopStrategy from './strategy/concreate/stop-strategy';
 import SetBpmStrategy from './strategy/concreate/set-bpm-strategy';
+import BeatView from '../view/beat-view';
 
 class BeatController {
   private strategies: Map<string, EventStrategy> = new Map();
 
-  constructor(model: BeatModel) {
+  constructor(model: BeatModel, view: BeatView) {
     this.setStrategy('decrease', new DecreaseBpmStrategy(model));
     this.setStrategy('increase', new IncreaseBpmStrategy(model));
     this.setStrategy('stop', new StopStrategy(model));
     this.setStrategy('start', new StartStrategy(model));
-    this.setStrategy(
-      'set',
-      new SetBpmStrategy(model, () => {
-        const input = document.getElementById('bpm-input') as HTMLInputElement;
-        return Number(input.value);
-      })
-    );
+    this.setStrategy('set', new SetBpmStrategy(model, view.getBPMInputValue));
     this.eventListener();
   }
 

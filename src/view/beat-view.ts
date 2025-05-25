@@ -48,6 +48,11 @@ class BeatView extends Container implements BPMObserver {
     };
     this.update(data);
   }
+
+  getBPMInputValue(): number {
+    const input = document.getElementById('bpm-input') as HTMLInputElement;
+    return Number(input.value);
+  }
 }
 
 export default BeatView;
